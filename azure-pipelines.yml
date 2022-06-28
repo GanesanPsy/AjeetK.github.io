@@ -26,6 +26,6 @@ steps:
 - task: Bash@3
   inputs:
     targetType: filePath
-    filePath: ./Test2.sh
+    filePath: ./Test1.sh
     arguments: ' -r eastus2 -s $(1)'
     failOnStderr: true
