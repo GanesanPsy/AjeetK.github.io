@@ -27,5 +27,5 @@ steps:
   inputs:
     targetType: filePath
     filePath: ./Test.sh
-    arguments: ' -r eastus2 -s $(PARAM)'
+    arguments: ' -r eastus2 -s $(Param)'
     failOnStderr: true
