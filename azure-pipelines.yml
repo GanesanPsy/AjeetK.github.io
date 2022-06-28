@@ -15,5 +15,4 @@ steps:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
-steps:
 - script: echo "hello to my first Build"
