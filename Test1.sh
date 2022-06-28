@@ -1,4 +1,5 @@
 #!/bin/bash
+param=$(yq '.parameters.projectName' azure-pipelines.yml)
 function main(){
     echo
     echo
@@ -38,7 +39,7 @@ deploy() {
 }
 
 # Orchestrate
-echo " Welcome to the Pilot Project!" $variable
+echo " Welcome to the Pilot Project!" $param
 main
 if [[ $1 = "build" ]]; then
 echo " Welcome to the Pilot Project!"
