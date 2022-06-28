@@ -24,25 +24,5 @@ jobs:
   steps:
   - script: echo building $(Build.BuildNumber) with ${{ parameters.image }}
 
-steps:
-#- task: Bash@3
-  #inputs:
-    #filePath: '/Test2.sh'
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
-- script: echo "hello to my first Build"
-- task: ShellScript@2
-  inputs:
-    scriptPath: ./Test1.sh
-    failOnStderr: true
-- task: Bash@3
-  inputs:
-    targetType: filePath
-    arguments: ' -r eastus2 -s $(1)'
-    filePath: ./Test.sh 
-    failOnStderr: true
 
 
