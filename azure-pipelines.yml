@@ -23,7 +23,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-     - script: echo "hello to my first Build"
+ - script: echo "hello to my first Build"
 
 #- task: Bash@3
   #inputs:
