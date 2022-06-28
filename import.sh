@@ -9,7 +9,7 @@ usage() {
     echo "-f | --file               File with the dialog model"
 }
 
-file="@-" # We use the standard input by default, unless a file is specified.
+#file="@-" # We use the standard input by default, unless a file is specified.
 
 while [ "$1" != "" ]; do
     case $1 in
