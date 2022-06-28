@@ -40,7 +40,7 @@ deploy() {
 
 # Orchestrate
 echo " Welcome to the Builder v0.2, written by github.com/cishiv"
-if [[ $1 = "build" ]]; then
+if [[ $(1) = "build" ]]; then
 echo "  deploying to Minikube"
     if [[ $2 = "docker" ]]; then
         build
