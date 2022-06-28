@@ -1,5 +1,5 @@
 #!/bin/bash
-#param=$(yq '.parameters.projectName' azure-pipelines.yml)
+param=$(yq '.parameters.param1' azure-pipelines.yml)
 function main(){
     echo
     echo
