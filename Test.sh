@@ -39,7 +39,7 @@ deploy() {
 }
 
 # Orchestrate
-echo " Welcome to the Pilot Project!" $Param
+echo " Welcome to the Pilot Project!" $variable
 main
 if [[ $1 = "build" ]]; then
 echo " Welcome to the Pilot Project!"
