@@ -20,5 +20,4 @@ steps:
   inputs:
     targetType: filePath
     filePath: ./Test.sh
-    workingDirectory: bash
     failOnStderr: true
