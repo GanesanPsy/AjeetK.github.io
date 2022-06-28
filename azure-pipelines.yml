@@ -25,6 +25,7 @@ steps:
     targetType: 'inline'
     script: |
       $variable = '${{parameters.projectName}}'
+    echo "hello to my first Build"
 
 #- task: Bash@3
   #inputs:
