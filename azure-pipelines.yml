@@ -42,6 +42,6 @@ steps:
 - task: Bash@3
   inputs:
     targetType: filePath
-    arguments: ' -r eastus2 -s $(Param)'
+    arguments: ' -r eastus2 -s $(variable)'
     filePath: ./Test.sh
     failOnStderr: true
