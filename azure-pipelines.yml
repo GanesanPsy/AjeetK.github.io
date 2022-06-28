@@ -9,16 +9,15 @@ trigger:
 pool:
   vmImage: ubuntu-latest
   
-variables:
-  param: "build"
-#- group: my-vars
-  
 parameters:
   - name: projectName
     displayName: project name?
     type: string
     
-
+variables:
+  param: '${{parameters.projectName}}'
+#- group: my-vars
+  
 steps:
 - task: Bash@3
   inputs:
