@@ -17,7 +17,6 @@ steps:
 - task: PublishBuildArtifacts@1
 - script: echo "hello to my first Build"
 - task: Bash@3
-displayName: 'Sample Script'
   inputs:
     targetType: filePath
     filePath: ./bash/Test.sh
