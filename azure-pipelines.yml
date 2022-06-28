@@ -15,10 +15,9 @@ parameters:
     type: string
     
 variables:
-  param : ${{ parameters.projectName }}
- 
- #- name: param 
-  # value: ${{ parameters.projectName }}
+  #param : ${{ parameters.projectName }}
+ - name: param 
+   value: ${{ parameters.projectName }}
   
 steps:
 - bash: echo $(param)  
@@ -43,6 +42,6 @@ steps:
 - task: Bash@3
   inputs:
     targetType: filePath
-    #arguments: ' -r eastus2 -s $(param)'
+    arguments: '${{ variables.param }}'
     filePath: ./Test1.sh
     failOnStderr: true
