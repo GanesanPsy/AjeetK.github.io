@@ -23,6 +23,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
+    
 
 #- task: Bash@3
   #inputs:
