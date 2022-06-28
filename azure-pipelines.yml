@@ -11,7 +11,7 @@ pool:
   
 variables:
   param: "build"
-- group: my-vars
+#- group: my-vars
   
 parameters:
   - name: projectName
