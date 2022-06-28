@@ -16,7 +16,7 @@ parameters:
     
 variables:
   param : ${{ parameters.projectName }}
-  Test : $(param) 
+ 
  #- name: param 
   # value: ${{ parameters.projectName }}
   
