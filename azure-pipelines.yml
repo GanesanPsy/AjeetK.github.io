@@ -11,15 +11,6 @@ pool:
 
 steps:
 - task: Bash@3
-  displayName: 'Export source app'
-  inputs:
-    targetType: filePath
-    filePath: ./export.sh
-    arguments: '-r westus2 -s $(SubscriptionKey) -c $(Culture) -a $(SourceAppId)'
-    workingDirectory: bash
-    failOnStderr: true
-
-- task: Bash@3
   displayName: 'Import to target app'
   inputs:
     targetType: filePath
@@ -28,11 +19,4 @@ steps:
     workingDirectory: bash
     failOnStderr: true
 
-- task: Bash@3
-  displayName: 'Train and Publish target app'
-  inputs:
-    targetType: filePath
-    filePath: './train-and-publish.sh'
-    arguments: '-r westus2 -s $(SubscriptionKey) -c $(Culture) -a $(TargetAppId)'
-    workingDirectory: bash
-    failOnStderr: true
+
