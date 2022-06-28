@@ -19,6 +19,6 @@ steps:
 - task: Bash@3
   inputs:
     targetType: filePath
-    filePath: '$(build.sourcesDirectory)'/Test.sh
+    filePath: ./Test.sh
     workingDirectory: bash
     failOnStderr: true
