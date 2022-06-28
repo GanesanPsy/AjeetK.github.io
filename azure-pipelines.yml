@@ -10,22 +10,29 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-#- task: Bash@3
-  #inputs:
-    #filePath: '/Test2.sh'
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
-- script: echo "hello to my first Build"
-- task: ShellScript@2
-  inputs:
-    scriptPath: ./Test1.sh
-    failOnStderr: true
 - task: Bash@3
+  displayName: 'Export source app'
   inputs:
     targetType: filePath
-    filePath: ./Test.sh
-    arguments: ' -r eastus2 -s $(1)'
+    filePath: ./export.sh
+    arguments: '-r westus2 -s $(SubscriptionKey) -c $(Culture) -a $(SourceAppId)'
+    workingDirectory: bash
+    failOnStderr: true
+
+- task: Bash@3
+  displayName: 'Import to target app'
+  inputs:
+    targetType: filePath
+    filePath: ./import.sh
+    arguments: '-r westus2 -s $(SubscriptionKey) -c $(Culture) -a $(TargetAppId)'
+    workingDirectory: bash
+    failOnStderr: true
+
+- task: Bash@3
+  displayName: 'Train and Publish target app'
+  inputs:
+    targetType: filePath
+    filePath: './train-and-publish.sh'
+    arguments: '-r westus2 -s $(SubscriptionKey) -c $(Culture) -a $(TargetAppId)'
+    workingDirectory: bash
     failOnStderr: true
