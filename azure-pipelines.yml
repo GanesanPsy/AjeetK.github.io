@@ -34,13 +34,13 @@ steps:
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
 - script: echo "hello to my first Build"
-- task: ShellScript@2
-  inputs:
-    scriptPath: ./Test1.sh
-    failOnStderr: true
+#- task: ShellScript@2
+  #inputs:
+    #scriptPath: ./Test1.sh
+    #failOnStderr: true
 - task: Bash@3
   inputs:
     targetType: filePath
-    arguments: ' -r eastus2 -s $(variable)'
-    filePath: ./Test.sh
+    arguments: ' -r eastus2 -s $(parameters.projectName)'
+    filePath: ./Test1.sh
     failOnStderr: true
