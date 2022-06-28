@@ -15,7 +15,7 @@ parameters:
     type: string
     
 variables:
-  param: parameters.projectName
+  param: $parameters.projectName
 #- group: my-vars
   
 steps:
