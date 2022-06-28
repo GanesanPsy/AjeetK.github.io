@@ -16,7 +16,7 @@ steps:
     targetType: filePath
     filePath: ./import.sh
     arguments: '-r westus2 -s $(SubscriptionKey) -c $(Culture) -a $(TargetAppId)'
-    workingDirectory: bash
+    #workingDirectory: bash
     failOnStderr: true
 
 
