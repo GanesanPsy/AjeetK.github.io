@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
   
   parameters:
-- name: image
+  - name: image
   displayName: Pool Image
   type: string
   default: ubuntu-latest
