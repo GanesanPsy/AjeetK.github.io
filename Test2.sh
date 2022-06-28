@@ -152,14 +152,38 @@ error_exit(){
   exit 1
 }
 
+function main1(){
+    echo
+    base64 -d 
+    echo
+    echo "                  M"
+    echo
+    echo "---------------------------------------------------------------------"
+    echo "This script sets up an evaluation version of  in your environment."
+    echo "---------------------------------------------------------------------"
+    echo
+    echo " Please ensure the following are set up before proceeding."
+    echo " 1. Install Docker & Docker Compose"
+    echo " 2. Install Git & obtain GitHub Personal Access Token"
+    echo 
+    read -p " Proceed? (y/n) " -n 1 -r
+    echo
+    
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+        exit 1
+    fi
+
+
+
 function main(){
     echo
     base64 -d <<<"H4sIAAAAAAAAA43TSw6AIAwE0D2nIGEzaYi9/+0MArblU+hO7YOpYox+pcW94AGkWrhFaawTKj1srN1rRI8C683zhIBsW6a0xLxB00CyAm8RQCPsHT4qRTWR7jgj28w+ihVBgQvUrwBmTTxEnTT0r1T1gEjPJMiEpM3Zay/CoCwRdwd2geSh/2uYeJfoG6R/sfACgoMtS68DAAA=" | gunzip
     echo
-    echo "                   DATA AND KNOWLEDGE PLATFORM"
+    echo "                  M"
     echo
     echo "---------------------------------------------------------------------"
-    echo "This script sets up an evaluation version of DKP in your environment."
+    echo "This script sets up an evaluation version of  in your environment."
     echo "---------------------------------------------------------------------"
     echo
     echo " Please ensure the following are set up before proceeding."
@@ -414,6 +438,7 @@ export ERR_DOWNLOAD=106
 
 
 ######  Calling Main Function #######
-main
+#main
+main1
 
 
