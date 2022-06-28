@@ -16,9 +16,10 @@ parameters:
     
 variables:
  - name: param
-   value: $[and( not(eq('${{ parameters.projectName }}', '')), not(eq('${{ parameters.projectName }}', '')))]
+   value: ${{ parameters.projectName }}'
   
 steps:
+- bash: echo $(param)  
 - task: Bash@3
   inputs:
     targetType: 'inline'
