@@ -13,6 +13,6 @@ function main(){
     echo " 1. Install Docker & Docker Compose"
     echo " 2. Install Git & obtain GitHub Personal Access Token"
     echo 
-    read -p " Proceed? (y/n) " -n 1 -r
+
     echo
     }
