@@ -8,6 +8,9 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  
+variables:
+  param: "build"
 
 steps:
 #- task: Bash@3
