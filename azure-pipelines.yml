@@ -10,9 +10,22 @@ pool:
   vmImage: ubuntu-latest
   
 variables:
-  param: "build"
+  param1: "build"
+- group: my-vars
+  
+parameters:
+  - name:projectName
+    displayName: project name?
+    type: string
+    
 
 steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      $variable = '${{parameters.projectName}}'      
+
 #- task: Bash@3
   #inputs:
     #filePath: '/Test2.sh'
