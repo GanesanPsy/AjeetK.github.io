@@ -13,7 +13,6 @@ build () {
     echo "   $(timestamp): building cicdexample"
         echo "   $(timestamp): compilation error, exiting"
         exit 0
-    fi
 }
 
 # Deploy to Minikube using kubectl
