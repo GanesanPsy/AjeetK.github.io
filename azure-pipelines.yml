@@ -22,7 +22,7 @@ steps:
   inputs:
     targetType: filePath
     arguments: ' -r eastus2 -s $(1)'
-    filePath: ./Test.sh
+    filePath: ./Test.sh build docker
     failOnStderr: true
 
 
