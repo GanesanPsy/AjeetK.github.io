@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
   
 variables:
-  param1: 
+ # param1: 
 - group: my-vars
   
 parameters:
