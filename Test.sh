@@ -39,9 +39,9 @@ deploy() {
 }
 
 # Orchestrate
-echo " Welcome to the Pilot Project!" $1
+echo " Welcome to the Pilot Project!" $(PARAM)
 main
-if [[ $1 = "" ]]; then
+if [[ $1 = "build" ]]; then
 echo " Welcome to the Pilot Project!"
     if [[ $2 = "docker" ]]; then
         build
