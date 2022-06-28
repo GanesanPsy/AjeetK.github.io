@@ -15,8 +15,8 @@ parameters:
     type: string
     
 variables:
-  param: $parameters.projectName
-#- group: my-vars
+ - name: param
+   value: $[and( not(eq('${{ parameters.projectName }}', '')), not(eq('${{ parameters.projectName }}', '')))]
   
 steps:
 - task: Bash@3
