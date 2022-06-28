@@ -1,25 +1,31 @@
-parameters:
-- name: action
-  displayName: Pool action
-  type: string
-  default: ubuntu-latest
-  values:
-  - build
-  - docker
-  - deploy
+# HTML
+# Archive your static HTML project and save it with the build record.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
 
-trigger: none
+trigger:
+- master
 
-jobs:
-- job: build
-  displayName: build
-  pool: 
-    vmImage: ${{ parameters.action }}
-  steps:
-  - script: echo The image parameter is ${{ parameters.action }}```
-  - script: echo building $(parameters.action)
-  - ${{ if eq(parameters.action, true) }}:
-    - script: echo "Running all the tests"
+pool:
+  vmImage: ubuntu-latest
 
-
-
+steps:
+#- task: Bash@3
+  #inputs:
+    #filePath: '/Test2.sh'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(build.sourcesDirectory)'
+    includeRootFolder: false
+- task: PublishBuildArtifacts@1
+- script: echo "hello to my first Build"
+- task: ShellScript@2
+  inputs:
+    scriptPath: ./Test1.sh
+    failOnStderr: true
+- task: Bash@3
+  inputs:
+    targetType: filePath
+    filePath: ./Test.sh
+    arguments: ' -r eastus2 -s $(1)'
+    failOnStderr: true
