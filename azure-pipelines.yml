@@ -1,11 +1,5 @@
-#trigger:
-#- master
-
-pool:
-  vmImage: ubuntu-latest
-  
-  parameters:
-  - name: image
+parameters:
+- name: image
   displayName: Pool Image
   type: string
   default: ubuntu-latest
@@ -22,7 +16,7 @@ jobs:
   pool: 
     vmImage: ${{ parameters.image }}
   steps:
-  - script: echo building $(Build.BuildNumber) with ${{ parameters.image }}
+  - script: echo The image parameter is ${{ parameters.image }}```
 
 
 
