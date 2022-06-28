@@ -24,7 +24,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $variable = '${{parameters.projectName}}'      
+      $variable = '${{parameters.projectName}}'
+     - script: echo "hello to my first Build"
 
 #- task: Bash@3
   #inputs:
