@@ -6,17 +6,12 @@ timestamp() {
 }
 
 # Temporary file for stderr redirects
-tmpfile=$(mktemp)
 
 # Go build
 build () {
     echo "    $(timestamp): started build script..."
     echo "   $(timestamp): building cicdexample"
-    go build 2>tmpfile
-    if [ -s tmpfile ]; then
-        cat tmpfile
         echo "   $(timestamp): compilation error, exiting"
-        rm tmpfile
         exit 0
     fi
 }
