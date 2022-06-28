@@ -13,7 +13,7 @@ function main(){
     echo " 1. Install Docker & Docker Compose"
     echo " 2. Install Git & obtain GitHub Personal Access Token"
     echo 
-    read -p " Proceed? (y/n) " -n 1 -r
+
     echo
     }
 
@@ -40,6 +40,7 @@ deploy() {
 
 # Orchestrate
 echo " Welcome to the Builder v0.2, written by github.com/cishiv"
+
 if [[$1 = "build" ]]; then
 echo "  deploying to Minikube"
     if [[ $2 = "docker" ]]; then
