@@ -39,7 +39,7 @@ deploy() {
 }
 
 # Orchestrate
-echo " Welcome to the Pilot Project!"
+echo " Welcome to the Pilot Project!" $1
 main
 if [[ $1 = "" ]]; then
 echo " Welcome to the Pilot Project!"
