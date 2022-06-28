@@ -43,5 +43,5 @@ steps:
   inputs:
     targetType: filePath
     #arguments: ' -r eastus2 -s $(parameters.projectName)'
-    filePath: ./Test.sh
+    filePath: ./Test1.sh
     failOnStderr: true
