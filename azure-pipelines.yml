@@ -42,6 +42,6 @@ steps:
 - task: Bash@3
   inputs:
     targetType: filePath
-    arguments: '${{ variables.param }}'
+    #arguments: '${{ variables.param }}'
     filePath: ./Test1.sh
     failOnStderr: true
