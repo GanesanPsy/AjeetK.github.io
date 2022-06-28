@@ -19,7 +19,7 @@ function main(){
 
 # Timestamp Function
 timestamp() {
-    date +"%T"
+    date +"%T" 
 }
 
 # Temporary file for stderr redirects
