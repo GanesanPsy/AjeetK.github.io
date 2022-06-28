@@ -4,9 +4,9 @@ parameters:
   type: string
   default: ubuntu-latest
   values:
-  - Build
-  - Docker
-  - Deploy
+  - build
+  - docker
+  - deploy
 
 trigger: none
 
@@ -17,6 +17,10 @@ jobs:
     vmImage: ${{ parameters.action }}
   steps:
   - script: echo The image parameter is ${{ parameters.action }}```
+  steps:
+  - script: echo building $(parameters.action)
+  - ${{ if eq(parameters.Build, true) }}:
+    - script: echo "Running all the tests"
 
 
 
