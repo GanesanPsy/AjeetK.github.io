@@ -14,7 +14,7 @@ variables:
 - group: my-vars
   
 parameters:
-  - name:projectName
+  - name: projectName
     displayName: project name?
     type: string
     
