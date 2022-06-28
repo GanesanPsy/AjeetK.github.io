@@ -14,7 +14,7 @@ pool:
   - ubuntu-latest
   - macOS-latest
 
-trigger: none
+#trigger: none
 
 jobs:
 - job: build
