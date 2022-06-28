@@ -24,7 +24,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      param1 = '${{parameters.projectName}}'
+      $param1 = '${{parameters.projectName}}'
   
 #- task: Bash@3
   #inputs:
