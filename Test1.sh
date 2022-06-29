@@ -2,7 +2,7 @@
 echo "test1"
 #param=$(yq '.variables.param' azure-pipelines.yml)
 
-echo " test2" $param
+echo " test2" $1
 function main(){
     echo
     echo
@@ -42,16 +42,17 @@ deploy() {
 }
 
 # Orchestrate
-echo " Welcome to the Pilot Project!" $param
+echo " Welcome to the Pilot Project!" $1
 main
 if [[ $1 = "build" ]]; then
 echo " Welcome to the Pilot Project!"
-    if [[ $2 = "docker" ]]; then
+    if [[ $1 = "docker" ]]; then
+    echo " Welcome to Docker!"
         build
         buildDocker
         echo "    $(timestamp): complete."
         echo " $(timestamp): exiting..."
-    elif [[ $2 = "bin" ]]; then
+    elif [[ $1 = "bin" ]]; then
         build
         echo "   $(timestamp): complete."
         echo "  $(timestamp): exiting..."
