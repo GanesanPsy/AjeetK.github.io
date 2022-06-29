@@ -17,7 +17,7 @@ parameters:
 variables:
   #param : ${{ parameters.projectName }}
  - name: param
-  ${{if eq(variables['parameters.projectName'], 'build'  }}:
+  ${{if eq(variables['parameters.projectName'], 'build') }}:
    value: build
 
   
