@@ -56,6 +56,6 @@ steps:
   inputs:
     targetType: filePath
     #arguments: '${{ variables.param }}'
-    arguments: '$(param)'
+    arguments: '$(param1) $(param2)'
     filePath: ./Test1.sh
     failOnStderr: true
