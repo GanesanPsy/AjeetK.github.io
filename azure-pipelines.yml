@@ -17,41 +17,18 @@ parameters:
     displayName: pipeline Arg2?
     type: string
     
-variables:
-#group: my-vars
-  #param : ${{ parameters.projectName }}
- #- name: param
- #param: "build"
-  ${{ if eq( parameters.pipelineArg1, 'build') }}:
-    param1: "build"
-  ${{ if eq( parameters.pipelineArg2, 'docker') }}:
-    param2: "docker"
-
-  
+ 
 steps:
 - bash: echo $(param1)
 - bash: echo $(param2)
-#- task: Bash@3
-  #inputs:
-    #targetType: 'inlineScript'
-    #arguments: '$(param1) $(param2)'
-    #inlineScript: './Test1.sh $1 $2'
 
-
-  
-#- task: Bash@3
-  #inputs:
-    #filePath: '/Test2.sh'
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
 - script: echo "hello to my first Build"
-#- task: ShellScript@2
-  #inputs:
-    #scriptPath: ./Test1.sh
-    #failOnStderr: true
+
 - task: Bash@3
   inputs:
     targetType: filePath
