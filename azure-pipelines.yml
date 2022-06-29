@@ -31,11 +31,11 @@ variables:
 steps:
 - bash: echo $(param1)
 - bash: echo $(param2)
-- task: Bash@3
-  inputs:
-    targetType: 'inlineScript'
-    arguments: '$(param1) $(param2)'
-    inlineScript: './Test1.sh $1 $2'
+#- task: Bash@3
+  #inputs:
+    #targetType: 'inlineScript'
+    #arguments: '$(param1) $(param2)'
+    #inlineScript: './Test1.sh $1 $2'
 
 
   
