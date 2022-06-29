@@ -18,6 +18,7 @@ variables:
 #- group: my-vars
   #param : ${{ parameters.projectName }}
  #- name: param
+ param: "build"
   ${{ if eq( parameters.projectName, 'build') }}:
     value: "build"
   ${{ if eq( parameters.projectName, 'Docker') }}:
