@@ -17,13 +17,13 @@ parameters:
 variables:
 - group: PROD
   #param : ${{ parameters.projectName }}
- - name: param
-  ${{ if eq(['parameters.projectName'], 'build') }}:
-   value: build
+ - name: env
+   ${{ if eq(['parameters.projectName'], 'build') }}:
+     value: build
 
   
 steps:
-- bash: echo $(param)  
+- bash: echo $(env)  
 - task: Bash@3
   inputs:
     targetType: 'inline'
