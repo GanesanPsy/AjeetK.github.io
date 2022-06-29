@@ -15,9 +15,11 @@ parameters:
     type: string
     
 variables:
-  param : ${{ parameters.projectName }}
-# - name: param 
-#   value: ${{ parameters.projectName }}
+  #param : ${{ parameters.projectName }}
+ - name: param
+  ${{if eq(variables['parameters.projectName'], 'build'  }}:
+   value: build
+
   
 steps:
 - bash: echo $(param)  
