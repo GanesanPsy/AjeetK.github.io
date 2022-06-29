@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "test1"
-param=$(yq '.variables.param' azure-pipelines.yml)
+#param=$(yq '.variables.param' azure-pipelines.yml)
 
-echo " test2" $param
+echo " test2" $1
 function main(){
     echo
     echo
