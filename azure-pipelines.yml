@@ -17,9 +17,9 @@ parameters:
 variables:
 - group: my-vars
   #param : ${{ parameters.projectName }}
- - name: param
-   ${{ if eq(${{ parameters.projectName }}, 'build') }}:
-     value: build
+ #- name: param
+  # ${{ if eq(${{ parameters.projectName }}, 'build') }}:
+   #  value: build
 
   
 steps:
