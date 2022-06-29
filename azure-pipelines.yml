@@ -21,8 +21,8 @@ variables:
  #param: "build"
   ${{ if eq( parameters.projectName, 'build') }}:
     param: "build"
-  ${{ if eq( parameters.projectName, 'Docker') }}:
-    param: "Docker"
+  ${{ if eq( parameters.projectName, 'docker') }}:
+    param: "docker"
 
   
 steps:
