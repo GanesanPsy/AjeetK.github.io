@@ -20,6 +20,8 @@ variables:
  #- name: param
   ${{ if eq( parameters.projectName, 'build') }}:
     value: build
+  ${{ if eq( parameters.projectName, 'Docker') }}:
+    value: Docker
 
   
 steps:
