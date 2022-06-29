@@ -15,15 +15,15 @@ parameters:
     type: string
     
 variables:
-- group: PROD
+- group: my-vars
   #param : ${{ parameters.projectName }}
- - name: env
+ - name: param
    ${{ if eq(parameters.projectName, 'build') }}:
      value: build
 
   
 steps:
-- bash: echo $(env)  
+- bash: echo $(param)  
 - task: Bash@3
   inputs:
     targetType: 'inline'
