@@ -27,12 +27,11 @@ variables:
   
 steps:
 - bash: echo $(param)
-- bash: echo $(parameters.projectName)  
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    arguments: '$(AZURE_STORAGE_ACCOUNT) $(AZURE_STORAGE_KEY)'
-    inlineScript: './Test1.sh $1 $2'
+    arguments: '$(param)'
+    inlineScript: './Test1.sh $1'
 
 
   
