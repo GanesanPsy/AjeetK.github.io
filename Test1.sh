@@ -47,13 +47,13 @@ main
 echo " Welcome to the Pilot Project Testing!" $1
 if [[ $1 = "build" ]]; then
 echo " Welcome to the Pilot Project!"
-    if [[ $1 = "docker" ]]; then
+    if [[ $2 = "docker" ]]; then
     echo " Welcome to Docker!"
         build
         buildDocker
         echo "    $(timestamp): complete."
         echo " $(timestamp): exiting..."
-    elif [[ $1 = "bin" ]]; then
+    elif [[ $2 = "bin" ]]; then
         build
         echo "   $(timestamp): complete."
         echo "  $(timestamp): exiting..."
