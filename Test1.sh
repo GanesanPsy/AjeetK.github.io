@@ -44,6 +44,7 @@ deploy() {
 # Orchestrate
 echo " Welcome to the Pilot Project!" $1
 main
+echo " Welcome to the Pilot Project Testing!" $1
 if [[ $1 = "build" ]]; then
 echo " Welcome to the Pilot Project!"
     if [[ $1 = "docker" ]]; then
