@@ -49,7 +49,6 @@ steps:
     #scriptPath: ./Test1.sh
     #failOnStderr: true
 - task: Bash@3
-- bash: echo $(param)
   inputs:
     targetType: filePath
     #arguments: '${{ variables.param }}'
