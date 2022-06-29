@@ -3,6 +3,7 @@ echo "test1"
 #param=$(yq '.variables.param' azure-pipelines.yml)
 
 echo " test2" $1
+echo " test2" $2
 function main(){
     echo
     echo
