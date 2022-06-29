@@ -31,7 +31,7 @@ steps:
   inputs:
     targetType: 'inline'
     arguments: '$(param)'
-    inlineScript: './Test1.sh build'
+    inlineScript: './Test1.sh'
 
 
   
@@ -49,8 +49,10 @@ steps:
     #scriptPath: ./Test1.sh
     #failOnStderr: true
 - task: Bash@3
+- bash: echo $(param)
   inputs:
     targetType: filePath
     #arguments: '${{ variables.param }}'
-    filePath: ./Test1.sh
+    arguments: '$(param)'
+    filePath: './Test1.sh $param'
     failOnStderr: true
