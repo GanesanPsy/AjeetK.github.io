@@ -18,15 +18,15 @@ variables:
 #- group: my-vars
   #param : ${{ parameters.projectName }}
  #- name: param
- param: "build"
-  #${{ if eq( parameters.projectName, 'build') }}:
-   # value: "build"
- # ${{ if eq( parameters.projectName, 'Docker') }}:
-  #  value: "Docker"
+ #param: "build"
+  ${{ if eq( parameters.projectName, 'build') }}:
+    param: "build"
+  ${{ if eq( parameters.projectName, 'Docker') }}:
+    param: "Docker"
 
   
 steps:
-- bash: echo $(value)  
+- bash: echo $(param)  
 - task: Bash@3
   inputs:
     targetType: 'inline'
