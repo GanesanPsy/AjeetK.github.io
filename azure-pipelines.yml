@@ -25,13 +25,39 @@ variables:
     param: "Docker"
 
   
+#steps:
+#- bash: echo $(param)
+#- bash: echo $(parameters.projectName)  
+#- task: Bash@3
+  #inputs:
+    #targetType: 'inline'
+
+ variables:
+- name: appVersion
+  value: 1.0
+- name: bNumber
+  value: $(Build.BuildNumber)
 steps:
-- bash: echo $(param)
-- bash: echo $(parameters.projectName)  
+- task: AzureCLI@2
+  inputs:
+    azureSubscription:'<subscription>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      #!/bin/sh
+      appVersion=$1
+      buildNo=$2    
+      echo printing values:
+      echo appVersion= "$appVersion"
+      echo buildNo= "$buildNo"
+    arguments: '${{ variables.appVersion }} ${{ variables.bNumber }}'
+    
+ - bash: echo $(param)
+#- bash: echo $(parameters.projectName)  
 - task: Bash@3
   inputs:
     targetType: 'inline'
- 
+
   
 #- task: Bash@3
   #inputs:
