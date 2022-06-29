@@ -55,7 +55,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: filePath
-    #arguments: '${{ variables.param }}'
-    arguments: '$(param1) $(param2)'
+    arguments: '${{ parameters.pipelineArg1 }} ${{ parameters.pipelineArg2 }}'
+    #arguments: '$(param1) $(param2)'
     filePath: ./Test1.sh
     failOnStderr: true
