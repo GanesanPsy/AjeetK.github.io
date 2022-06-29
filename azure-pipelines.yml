@@ -30,6 +30,7 @@ variables:
   
 steps:
 - bash: echo $(param1)
+- bash: echo $(param2)
 - task: Bash@3
   inputs:
     targetType: 'inline'
