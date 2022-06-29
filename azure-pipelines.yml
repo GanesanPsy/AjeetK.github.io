@@ -18,7 +18,7 @@ variables:
 - group: PROD
   #param : ${{ parameters.projectName }}
  - name: env
-   ${{ if eq(['parameters.projectName'], 'build') }}:
+   ${{ if eq(variables['parameters.projectName'], 'build') }}:
      value: build
 
   
