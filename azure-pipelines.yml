@@ -29,9 +29,9 @@ steps:
 - bash: echo $(param)
 - task: Bash@3
   inputs:
-    targetType: 'inlineScript'
+    targetType: 'inline'
     arguments: '$(param)'
-    inlineScript: './Test1.sh $param'
+    inlineScript: './Test1.sh $1'
 
 
   
