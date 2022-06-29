@@ -15,10 +15,11 @@ parameters:
     type: string
     
 variables:
-group: my-vars
+#group: my-vars
   #param : ${{ parameters.projectName }}
  #- name: param
  #param: "build"
+ - bash: echo $(parameters.projectName)  
   ${{ if eq( parameters.projectName, 'build') }}:
     param: "build"
   ${{ if eq( parameters.projectName, 'Docker') }}:
