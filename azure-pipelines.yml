@@ -19,7 +19,6 @@ variables:
   #param : ${{ parameters.projectName }}
  #- name: param
  #param: "build"
- - bash: echo $(parameters.projectName)  
   #${{ if eq( parameters.projectName, 'build') }}:
    # param: "build"
  # ${{ if eq( parameters.projectName, 'Docker') }}:
@@ -27,7 +26,8 @@ variables:
 
   
 steps:
-- bash: echo $(param)  
+- bash: echo $(param)
+- bash: echo $(parameters.projectName)  
 - task: Bash@3
   inputs:
     targetType: 'inline'
