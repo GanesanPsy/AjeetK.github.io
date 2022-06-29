@@ -15,6 +15,7 @@ parameters:
     type: string
     
 variables:
+- group: PROD
   #param : ${{ parameters.projectName }}
  - name: param
   ${{ if eq(['parameters.projectName'], 'build') }}:
