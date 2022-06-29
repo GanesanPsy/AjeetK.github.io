@@ -10,8 +10,11 @@ pool:
   vmImage: ubuntu-latest
   
 parameters:
-  - name: projectName
-    displayName: project name?
+  - name: pipelineArg1
+    displayName: pipeline Arg1?
+    type: string
+  - name: pipelineArg2
+    displayName: pipeline Arg2?
     type: string
     
 variables:
@@ -19,19 +22,19 @@ variables:
   #param : ${{ parameters.projectName }}
  #- name: param
  #param: "build"
-  ${{ if eq( parameters.projectName, 'build') }}:
-    param: "build"
-  ${{ if eq( parameters.projectName, 'docker') }}:
-    param: "docker"
+  ${{ if eq( parameters.pipelineArg1, 'build') }}:
+    param1: "build"
+  ${{ if eq( parameters.pipelineArg2, 'docker') }}:
+    param2: "docker"
 
   
 steps:
-- bash: echo $(param)
+- bash: echo $(param1)
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    arguments: '$(param)'
-    inlineScript: './Test1.sh $1'
+    arguments: '$(param1) $(param2)'
+    inlineScript: './Test1.sh $1 $2'
 
 
   
